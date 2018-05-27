@@ -52,7 +52,7 @@ class User implements UserInterface, \Serializable
     public function __construct()
     {
         $this->isActive = true;
-       // $this->roles = array('ROLE_USER');
+        $this->roles = array('ROLE_USER');
         // may not be needed, see section on salt below
         // $this->salt = md5(uniqid('', true));
     }

@@ -11,3 +11,77 @@
         {% block javascripts %}{% endblock %}
     </body>
 </html>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle Navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Symfony</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="">Home</a></li>
+
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Login</a></li>
+                {% if not is_granted('IS_AUTHENTICATED_FULLY') %}
+                    <li><a href="">login</a></li>
+                {% else %}
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href=""></a></li>
+                        </ul>
+                    </li>
+
+                {% endif %}
+                <li><a href="{{ path('user_registration') }}">Register</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+{% set flash_success = app.session.flashbag.get('success') %}
+{% set flash_error = app.session.flashbag.get('error') %}
+{% if flash_success %}
+    <div class="alert alert-success">
+        <ul>
+            {% for flash_message in flash_success %}
+                <li>{{ flash_message }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}
+
+{% if flash_error %}
+    <div class="alert alert-danger">
+        <ul>
+            {% for flash_message in flash_error %}
+                <li>{{ flash_message }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}
+{% block registro %}{% endblock %}
+<!-- Scripts -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -16,7 +16,7 @@ use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
-class EquipoType extends AbstractType {
+class TeamType extends AbstractType {
 
     public function buildForm(FormBuilderInterface $builder, array $options) {
         $builder->add('id', HiddenType::class)

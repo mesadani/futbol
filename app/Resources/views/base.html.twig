@@ -34,6 +34,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li><a href="">Home</a></li>
+                <li><a href="{{ path('crearEquipo') }}">Create Team</a></li>
 
             </ul>
 
@@ -80,6 +81,7 @@
     </div>
 {% endif %}
 {% block registro %}{% endblock %}
+{% block createTeam %}{% endblock %}
 <!-- Scripts -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>

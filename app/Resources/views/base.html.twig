@@ -40,7 +40,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#">Login</a></li>
                 {% if not is_granted('IS_AUTHENTICATED_FULLY') %}
-                    <li><a href="">login</a></li>
+                    <li><a href="{{ path('login') }}">login</a></li>
                 {% else %}
 
                     <li class="dropdown">

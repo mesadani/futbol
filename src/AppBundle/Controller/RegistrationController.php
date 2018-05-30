@@ -45,7 +45,7 @@ class RegistrationController extends Controller
 
             // ... do any other work - like sending them an email, etc
             // maybe set a "flash" success message for the user
-
+            $this->addFlash('success', $this->get('translator')->trans('Registry saved!'));
             return $this->redirectToRoute('user_registration');
         }
 

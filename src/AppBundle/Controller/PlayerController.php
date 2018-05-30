@@ -39,11 +39,11 @@ class PlayerController extends Controller
      * @Route("/jugador/guardar", name="guardarPlayer")
      */
     public function guardarAction(Request $request) {
-       /* if (!$request->isMethod('POST')) {
+        if (!$request->isMethod('POST')) {
             //return $this->redirectToRoute('catalogo.listar');
         }
-        $team = new Team();
-        $form = $this->createForm(TeamType::class, $team);
+        $team = new Player();
+        $form = $this->createForm(PlayerType::class, $team);
 
         $form->handleRequest($request);
         if ($form->isValid()) {
@@ -51,8 +51,8 @@ class PlayerController extends Controller
             $em->persist($team);
             $em->flush();
             $this->addFlash('success', $this->get('translator')->trans('Product successfully saved!'));
-            return $this->redirectToRoute('crearEquipo');
-        }*/
+            return $this->redirectToRoute('crearJugador');
+        }
 
     }
 
